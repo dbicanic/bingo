@@ -1,0 +1,8 @@
+<span id="remaining-count" class="text-sm text-gray-600">
+  <% remaining = game.remaining_numbers.size %>
+  <% if remaining == 0 %>
+    <span class="text-red-600 font-semibold">All balls drawn!</span>
+  <% else %>
+    <span class="font-semibold"><%= remaining %></span> balls remaining
+  <% end %>
+</span>

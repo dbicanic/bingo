@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bingo Cards</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  </head>
+  <body class="bg-white p-6">
+    <div class="no-print mb-4 flex gap-3">
+      <%= link_to "← Back to Game", root_path, class: "text-blue-600 underline text-sm" %>
+      <button onclick="window.print()" class="bg-blue-600 text-white px-4 py-1.5 rounded text-sm font-semibold">
+        Print this page
+      </button>
+    </div>
+    <%= yield %>
+  </body>
+</html>

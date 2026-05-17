@@ -1,0 +1,14 @@
+<% grouped = game.drawn_numbers.group_by { |n| game.ball_letter(n) } %>
+<div class="space-y-2">
+  <% %w[B I N G O].each do |letter| %>
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class="w-5 text-xs font-bold text-gray-500"><%= letter %></span>
+      <% (grouped[letter] || []).sort.each do |n| %>
+        <span class="inline-block w-8 h-8 rounded-full text-xs font-bold flex items-center justify-center
+                     bg-blue-100 text-blue-800 border border-blue-300">
+          <%= n %>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+</div>

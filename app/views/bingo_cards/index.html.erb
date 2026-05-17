@@ -1,0 +1,11 @@
+<% if @bingo_cards.empty? %>
+  <p class="text-gray-400 italic">No cards generated yet.</p>
+<% else %>
+  <div class="flex flex-wrap gap-8">
+    <% @bingo_cards.each do |card| %>
+      <div class="print-card">
+        <%= render "shared/bingo_card", card: card, drawn_numbers: [] %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
